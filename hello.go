@@ -7,7 +7,7 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	hello := []byte("Hello World!!!")
+	hello := []byte("Hello World!!!   aaaあああ")
 	_, err := w.Write(hello)
 	if err != nil {
 		log.Fatal(err)
