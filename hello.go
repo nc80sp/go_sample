@@ -24,7 +24,7 @@ func helloHandler2(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/hello", helloHandler)
-	http.HandleFunc("/kon", helloHandler)
+	http.HandleFunc("/kon", helloHandler2)
 	fmt.Println("Server Start Up........")
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
