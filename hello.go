@@ -14,8 +14,17 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func helloHandler2(w http.ResponseWriter, r *http.Request) {
+	hello := []byte("<html><body><h1>こんにちは</h1></body></html>")
+	_, err := w.Write(hello)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func main() {
 	http.HandleFunc("/hello", helloHandler)
+	http.HandleFunc("/kon", helloHandler)
 	fmt.Println("Server Start Up........")
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
