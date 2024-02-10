@@ -12,6 +12,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	_, err := w.Write(hello)
 	
 	
 }
